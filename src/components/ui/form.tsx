@@ -1,4 +1,6 @@
-import * as React from "react"
+"use client" // Failed to generate static paths for /servers/[serverId] - createContext only works in Client Components.
+
+import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
 import {
