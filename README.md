@@ -9,6 +9,13 @@
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
 
+## Getting Started
+```bash
+git clone https://github.com/xoxojw/bubble-chat.git
+yarn add
+yarn dev
+```
+
 ## Setup `.env` guide
 
 ```js
