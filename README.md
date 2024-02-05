@@ -6,6 +6,7 @@
 - [TypeScript](https://www.typescriptlang.org/ko/)
 - [Socket.io](https://socket.io/)
 - [Prisma](https://www.prisma.io/)
+- [Zustand](https://zustand-demo.pmnd.rs/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
 
