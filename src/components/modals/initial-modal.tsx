@@ -1,6 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 
+import axios from "axios";
+import { useRouter } from "next/navigation";
+
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -21,8 +24,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input, Button } from "@/components/ui";
+import FileUpload from "@/components/FileUpload";
 
 const formSchema = z.object({
   name: z.string().min(1, {
@@ -35,6 +38,8 @@ const formSchema = z.object({
 
 export const InitialModal = () => { 
   const [isMounted, setIsMounted] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -51,7 +56,15 @@ export const InitialModal = () => {
   const isLoading = form.formState.isSubmitting;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    try { 
+      await axios.post("/api/servers", values);
+
+      form.reset();
+      router.refresh();
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   if (!isMounted) {
@@ -65,12 +78,27 @@ export const InitialModal = () => {
           <DialogTitle className="text-2xl text-center">서버를 생성하세요.</DialogTitle>
           <DialogDescription className="text-center text-zinc-500">새로운 서버에 이름과 이미지를 등록하세요. 나중에 언제든지 다시 바꿀 수 있어요.</DialogDescription>
         </DialogHeader>
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8">
             <div className="space-y-8 px-6">
               <div className="flex items-center justify-center text-center">
-                이미지 업로드 추가
+                <FormField
+                  control={form.control}
+                  name="imageUrl"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <FileUpload
+                          endpoint="serverImage"
+                          value={field.value}
+                          onChange={field.onChange}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
               </div>
 
               <FormField
@@ -95,6 +123,7 @@ export const InitialModal = () => {
                 )}
               />
             </div>
+
             <DialogFooter className="bg-gray-100 px-6 py-4">
               <Button variant="primary" disabled={isLoading}>
                 생성하기
