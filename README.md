@@ -1,4 +1,4 @@
-# 실시간 채팅 앱 💬
+# 디스코드 클론 앱 💬
 
 ## Stacks
 
@@ -12,7 +12,7 @@
 
 ## Getting Started
 ```bash
-git clone https://github.com/xoxojw/bubble-chat.git
+git clone https://github.com/xoxojw/discord-app.git
 yarn add
 yarn dev
 ```

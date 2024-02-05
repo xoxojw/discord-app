@@ -13,8 +13,8 @@ import { ModalProvider } from "@/components/providers/modal-provider";
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "버블챗 Bubble Chat",
-	description: "실시간 채팅 앱 버블챗 Bubble Chat",
+	title: "Disco-rd",
+	description: "실시간 채팅 앱 디스코-드",
 };
 
 export default function RootLayout({
