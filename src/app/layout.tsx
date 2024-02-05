@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "버블 메시지",
-	description: "실시간 채팅 앱 버블 메시지",
+	title: "버블챗 Bubble Chat",
+	description: "실시간 채팅 앱 버블챗 Bubble Chat",
 };
 
 export default function RootLayout({
