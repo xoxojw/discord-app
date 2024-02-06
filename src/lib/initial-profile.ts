@@ -19,10 +19,14 @@ export const initialProfile = async () => {
     return profile;
   }
 
+  const generateRandomUsernumber = () => {
+    return Math.floor(Math.random() * 9000) + 1000;
+  }
+
   const newProfile = await db.profile.create({
     data: {
       userId: user.id,
-      name: `${user.lastName} ${user.firstName}`,
+      name: `${user.lastName || ""} ${user.firstName || `User ${generateRandomUsernumber()}`}`,
       imageUrl: user.imageUrl,
       email: user.emailAddresses[0].emailAddress
     }
