@@ -26,9 +26,8 @@ const FileUpload = ({
         <Image
           src={value}
           alt="서버 업로드 이미지"
-          width={80}
-          height={80}
-          className="rounded-full"
+          fill
+          className="rounded-full object-cover"
         />
         <button
           onClick={() => onChange("")}
