@@ -2,8 +2,9 @@
 import { useEffect, useState } from "react";
 
 import { CreateServerModal } from "@/components/modals/create-server-modal";
-import { InviteModal } from "@/components//modals/invite-modal";
+import { InviteModal } from "@/components/modals/invite-modal";
 import { EditServerModal } from "@/components/modals/edit-server-modal";
+import { MembersModal } from "@/components/modals/members-modal";
 
 // All modals are rendered via ModalProvider, except 'initial-modal'.
 // Because 'initial-modal' renders directly, so it works independently without linking with zustand custom hooks.
@@ -23,6 +24,7 @@ export const ModalProvider = () => {
       <CreateServerModal />
       <InviteModal />
       <EditServerModal />
+      <MembersModal />
     </>
   )
 }
