@@ -60,7 +60,7 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {isAdmin && (
           <DropdownMenuItem
-          onClick={() => onOpen("members", { server })}
+            onClick={() => onOpen("members", { server })}
             className="px-3 py-2 text-sm cursor-pointer"
           >
             멤버 관리
@@ -79,6 +79,7 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         {isModerator && <DropdownMenuSeparator />}
         {isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen("deleteServer", { server })}
             className="text-rose-400 px-3 py-2 text-sm cursor-pointer"
           >
             서버 삭제
@@ -87,6 +88,7 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {!isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen("leaveServer", { server })}
             className="text-rose-400 px-3 py-2 text-sm cursor-pointer"
           >
             서버 나가기
@@ -95,5 +97,5 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 };
