@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { ActionTooptip } from "@/components/action-tooltip";
+import { ActionTooltip } from "@/components/action-tooltip";
 
 interface NavigationItemProps {
 	id: string;
@@ -21,7 +21,7 @@ export const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
   }
 
 	return (
-		<ActionTooptip
+		<ActionTooltip
 			side="right"
 			align="center"
 			label={name}
@@ -45,6 +45,6 @@ export const NavigationItem = ({ id, imageUrl, name }: NavigationItemProps) => {
           />
         </div>
 			</button>
-		</ActionTooptip>
+		</ActionTooltip>
 	);
 };

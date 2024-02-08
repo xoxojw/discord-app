@@ -2,7 +2,7 @@
 
 import { Plus } from "lucide-react";
 
-import { ActionTooptip } from "@/components/action-tooltip";
+import { ActionTooltip } from "@/components/action-tooltip";
 import { useModal } from "@/hooks/use-modal-store";
 
 export const NavigationAction = () => {
@@ -10,7 +10,7 @@ export const NavigationAction = () => {
 
 	return (
 		<div>
-      <ActionTooptip
+      <ActionTooltip
         side="right"
         align="center"
         label="서버 추가하기"
@@ -26,7 +26,7 @@ export const NavigationAction = () => {
 						/>
 					</div>
 				</button>
-			</ActionTooptip>
+			</ActionTooltip>
 		</div>
 	);
 };
