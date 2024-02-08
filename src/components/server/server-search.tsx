@@ -13,10 +13,6 @@ import {
 	CommandList,
 } from "@/components/ui";
 
-type userOS = {
-  os: "Windows" | "Mac OS" | "unknown"
-}
-
 interface ServerSearchProps {
   data: {
     label: string;
@@ -29,27 +25,20 @@ interface ServerSearchProps {
   }[]
 }
 
-const detectUserOS = () => {
-  if (navigator.userAgentData && navigator.userAgentData.platform) {
-      const platform = navigator.userAgentData.platform.toLowerCase();
-      if (platform.includes("mac")) {
-          return "Mac OS";
-      } else if (platform.includes("win")) {
-          return "Windows";
-      }
-  }
-  return "unknown";
-}
-
 export const ServerSearch = ({ data }: ServerSearchProps) => {
-  const [userOS, setUserOS] = useState("unknown");
+  const [userOS, setUserOS] = useState("");
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const params = useParams();
 
   useEffect(() => {
-    const os = detectUserOS();
-    setUserOS(os);
+    const detectOS = window.navigator.userAgent;
+    if (detectOS.includes("Windows")) {
+      setUserOS("windows")
+    } else if (detectOS.includes("Macintosh" || "Mac")) {
+      setUserOS("mac")
+    }
+
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
