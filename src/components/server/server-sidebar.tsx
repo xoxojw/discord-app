@@ -172,7 +172,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
 					<div className="mb-3">
 						<ServerSection
 							sectionType="channels"
-							channelType={ChannelType.AUDIO}
+							channelType={ChannelType.VIDEO}
 							role={role}
 							label="영상 채널"
 						/>
