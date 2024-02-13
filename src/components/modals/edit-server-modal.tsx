@@ -82,7 +82,7 @@ export const EditServerModal = () => {
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
-          <DialogTitle className="text-2xl text-center">서버 설정 변경하기</DialogTitle>
+          <DialogTitle className="text-2xl text-center">서버 설정</DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
             서버 이름과 이미지를 수정할 수 있어요.
           </DialogDescription>
