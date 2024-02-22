@@ -4,7 +4,7 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger
-} from "@/components/ui/sheet";
+} from "@/components/ui";
 import { Button } from "@/components/ui";
 import { NavigationSidebar } from "@/components/navigation/navigation-sidebar";
 import { ServerSidebar } from "@/components/server/server-sidebar";
